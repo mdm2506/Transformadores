@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformadores</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        h1, h3, h4, p {
+            margin: 0;
+            padding: 10px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        header {
+            background-color: #9b59b6;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 10px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s forwards;
+        }
+        header img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        nav {
+            background-color: #8e44ad;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            margin-top: 20px;
+            animation: slideIn 1s forwards;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #7f3e96;
+        }
+        .contenido {
+            display: none;
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s forwards;
+        }
+        video {
+            display: block;
+            max-width: 100%;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        .indice-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .indice-container button {
+            background-color: #9b59b6;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .indice-container button:hover {
+            background-color: #7f3e96;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            background-color: #9b59b6;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s ease;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #7f3e96;
+            transform: scale(1.05);
+        }
+        button:active {
+            background-color: #5e3370;
+            transform: scale(1);
+        }
+        .contenido-central {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://cdn-icons-png.flaticon.com/512/7309/7309611.png" alt="Imagen 1" width="100" height="100">
+
+        <h1>Transformadores</h1>
+        <p>Grupo 2.</p>
+    </header>
+    <nav>
+        <a href="#" onclick="mostrarSeccion('Portada')">Portada</a>
+        <a href="#" onclick="mostrarSeccion('Indice')">Indice</a>
+        <a href="#" onclick="mostrarSeccion('Video')">Video</a>
+    </nav>
+    <section id="EnBlanco" style="display: none;">
+      
+    </section>
+    
+    <section id="Indice" style="display: none;">
+        <div class="indice-container">
+            <h3>INDICE:</h3>
+            <button onclick="mostrarSeccion('QueEsUnTransformador')">¿Qué es un transformador?</button>
+            <button onclick="mostrarSeccion('PartesDeUnTransformador')">Partes de un Transformador</button>
+            <button onclick="mostrarSeccion('Aplicaciones')">Aplicaciones de Transformadores</button>
+            <button onclick="mostrarSeccion('TiposDeTransformadores')">Tipos de transformadores</button>
+            <button onclick="mostrarSeccion('Funcionamiento')">Funcionamiento</button>
+            <button onclick="mostrarSeccion('Construccion')">Construcción de un Transformador</button>
+            <button onclick="mostrarSeccion('Componentes')">Componentes</button>
+            <button onclick="mostrarSeccion('VentajasyDesventajas')">Ventajas y desventajas</button>
+            <button onclick="mostrarSeccion('Conclusion')">Conclusión</button>
+            <button onclick="mostrarSeccion('Referencias')">Referencias</button>
+        </div>
+    </section>
+    <div class="contenido" id="QueEsUnTransformador">
+        <h3>¿ Que es un transformador ?></h3>
+        <p>Un transformador de computadora es un dispositivo que se utiliza para regular el voltaje de entrada de la corriente eléctrica que alimenta a la computadora. Su función principal es convertir el voltaje de corriente alterna de la toma de corriente en un voltaje de corriente continua adecuado para el funcionamiento de la computadora.
+            Este dispositivo es esencial para proteger el equipo de posibles fluctuaciones en el suministro eléctrico, ya que una corriente inestable puede dañar los componentes internos de la computadora.
+            </p>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7ZdSjIyU-l4OkMefZTLrDLPncV_WAqXODCp95e-ERfJwFeRkxWjP2dH9iBpcT1tE-nfU4YkqPHgWgE2NZK_-qfw1H8o0MFCNPxpGCfGOikPzdt15uoA13H-k5teH_ch1fTM-Y_e0Dwo3CTJQlYnoFg_9ze7ndPwyjY9NZYouh2A5A7dpESoEUAIZeXQ/s16000/transformadores-tipos-la-upea-2022-reyqui.jpg" 
+            alt="Transformador Image" 
+            width="200" 
+            height="auto">
+            <br>
+        <button onclick="volverAlInicio()">Volver al inicio</button>
+    </div>
+    <div class="contenido" id="PartesDeUnTransformador">
+        <h3>Partes de un transformador</h3>
+        <p><strong>- Núcleo:</strong> Es el componente central del transformador y está compuesto por laminaciones de hierro o acero. El núcleo se utiliza para guiar el flujo de campo magnético a través de las bobinas.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK1kglBjXDpMFNTVzgBQbzkz3nEfP8C1S0cpxoku0QCdxhAff0e6t9wjo-tzJ2VoRd2wM&usqp=CAU" alt="Imagen 3" width="200" height="auto">
+
+<p><strong>- Bobinas:</strong> Hay dos tipos de bobinas en un transformador, la bobina de entrada (o primaria) y la bobina de salida (o secundaria). La bobina primaria se conecta al circuito de entrada, mientras que la bobina secundaria se conecta al circuito de salida.</p>
+<img src="https://diego223.wordpress.com/wp-content/uploads/2012/11/red_de_zobel.jpg" alt="Red de Zobel" width="200" height="auto">
+
+<p><strong>- Aislamiento:</strong> El aislamiento se coloca entre el núcleo y las bobinas para evitar cortocircuitos eléctricos. El aislamiento puede ser de papel, lona o aceite.</p>
+<img src="https://img.directindustry.es/images_di/photo-mg/201126-14515605.jpg" alt="Imagen Direct Industry 1" width="200" height="auto">
+
+<p><strong>- Caja:</strong> Es la caja que contiene al transformador para protegerlo de la humedad, polvo y otros factores ambientales.</p>
+<img src="https://avimet.cl/wp-content/uploads/2017/12/cajas-transformador.png" alt="Caja Transformador" width="200" height="auto">
+<p><strong>- Terminales:</strong> Los terminales se utilizan para conectar el transformador al circuito eléctrico.</p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4pxCQqXL0bBb01Vc5o0Z61Tk23V_QSE5EpV6Mk90GwRy-Vzf6uUlI-lSff6ThvCc-Gy4&usqp=CAU" alt="Imagen 6" width="200" height="auto">
+<p><strong>- Refrigeración:</strong> Los transformadores de mayor potencia pueden necesitar dispositivos de refrigeración, como ventiladores o radiadores, para disipar el calor generado durante su operación.</p>
+<img src="https://img.directindustry.es/images_di/photo-g/244032-17403023.jpg" alt="Imagen Direct Industry 2" width="200" height="auto">
+
+<p><strong>- Dispositivos de protección:</strong> También pueden incluir dispositivos de protección, como interruptores, fusibles o dispositivos de sobrecarga, para proteger el transformador de daños en caso de un fallo en el sistema eléctrico.</p>
+<img src="https://www.arqhys.com/arquitectura/fotos/arquitectura/Proteccion-de-los-interruptores-contra-sobrecargas-y-cortocircuitos.jpg" alt="Protección Interruptores" width="200" height="auto">
+<br>
+<button onclick="volverAlInicio()">Volver al inicio</button>
+    </div>
+    <div class="contenido" id="Aplicaciones">
+        <h3>Aplicaciones de transformadores</h3>
+        <p><strong>Transmisión de energía eléctrica a larga distancia:</strong> Para elevar el voltaje de la energía eléctrica antes de transmitirla a través de líneas de transmisión de alta tensión para reducir las pérdidas de energía.</p>
+
+<p><strong>Distribución de energía eléctrica:</strong> En subestaciones para reducir el voltaje de la energía eléctrica antes de distribuirla a hogares y negocios.</p>
+
+<p><strong>Aplicaciones industriales:</strong> En fábricas, centrales eléctricas y otras instalaciones industriales para suministrar energía eléctrica a maquinaria y equipos.</p>
+
+<p><strong>Alimentación de equipos eléctricos:</strong> En una variedad de equipos eléctricos, como motores, electrodomésticos, equipos de audio y vídeo para adaptar el voltaje de la alimentación eléctrica.</p>
+
+<p><strong>Alimentación de equipos electrónicos:</strong> Posee usos en equipos electrónicos, como ordenadores, dispositivos móviles y televisores para convertir el voltaje de la alimentación eléctrica a un valor utilizable.</p>
+
+<p><strong>Cargadores de baterías:</strong> En cargadores de baterías para adaptar el voltaje de la alimentación eléctrica a un valor adecuado para cargar las baterías.</p>
+
+<p><strong>Aplicaciones médicas:</strong> Poseen aplicaciones en equipos médicos, como electrocardiógrafos y resonancias magnéticas, para generar campos magnéticos de alta intensidad.</p>
+
+        <button onclick="volverAlInicio()">Volver al inicio</button>
+    </div>
+    <div class="contenido" id="TiposDeTransformadores">
+        <h3>Tipos de transformadores</h3>
+        <p>Existen tres tipos de transformadores, dependiendo de la aplicación son seleccionados e instalados. El transformador se fabrica en materiales que soportan las condiciones de intemperie así́ como con características específicas de construcción para el tanque que contiene el líquido aislante.</p>
+
+        <p><strong>Transformador monofásico:</strong> Un transformador monofásico es el que tiene dos polos: fase y neutro. Está formado por dos embobinados: uno de alta y otro de baja. Es común utilizar arreglos de transformador usando dos o tres transformadores para formar un sistema bifásico o trifásico.</p>
+        
+        <p><strong>Transformador bifásico:</strong> El transformador bifásico tiene dos fases y un neutro, por lo que cuentan con 4 embobinados: dos de alta y dos de baja. Es común encontrarlos en instalaciones comerciales o en aplicaciones especiales.</p>
+        
+        <p><strong>Transformador trifásico:</strong> El transformador trifásico tiene tres fases y está formado por 6 embobinados: tres de alta y tres de baja. Este transformador típicamente se conecta en estrella o delta o cualquier combinación de ellas.</p>
+        
+        <p><strong>¿Qué transformadores usan las computadoras?</strong></p>
+        <ul>
+            <li>Transformadores de equipos microinformáticos.</li>
+            <li>Adaptadores de CA, también conocidos como "verrugas de pared".</li>
+        </ul>
+        
+        <p><strong>¿Cómo funcionan los transformadores de equipos microinformáticos?</strong></p>
+        <ul>
+            <li>Transforman la corriente alterna de la instalación eléctrica en corriente continua.</li>
+            <li>Proporcionan corriente eléctrica al equipo con un único voltaje de tensión.</li>
+        </ul>
+        <img src="https://m.media-amazon.com/images/I/61UPYzEW1oL.AC_UF350,350_QL80.jpg" alt="Producto 2" width="200" height="auto">
+<br>
+        <button onclick="volverAlInicio()">Volver al inicio</button>
+    </div>
+    <div class="contenido" id="Funcionamiento">
+        <h3>Funcionamiento</h3>
+        <p><strong>Un transformador realiza los siguientes procesos con la corriente eléctrica para realizar su transformación:</strong></p>
+
+<ul>
+  <li><strong>Transformación:</strong> Reduce la tensión de entrada (voltaje) a la fuente de alimentación mediante un transformador. Se realiza mediante bobinas.</li>
+  <li><strong>Rectificación:</strong> Se transforma la corriente alterna de bipolar en unipolar. De esta manera, el voltaje siempre va a ser mayor que 0, es decir, será siempre positivo. Se realiza mediante el puente rectificador o de Graetz (diodos).</li>
+  <li><strong>Filtrado:</strong> En este paso tenemos ya la corriente continua, pero no es constante. En esta fase de filtrado se aplana la señal eliminando las oscilaciones. De esta manera se suaviza la señal, es decir, elimina la poca onda que quede. Se realiza mediante condensadores.</li>
+  <li><strong>Estabilización:</strong> En esta fase de estabilización lo que se consigue mediante un regulador es que no le afecten a la señal de salida las variaciones de la señal de entrada a la fuente. Hace que sea de mejor calidad.</li>
+</ul>
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Etapa-atx.png" alt="Etapa ATX" width="200" height="auto">
+<br>
+        <button onclick="volverAlInicio()">Volver al inicio</button>
+    </div>
+    <div class="contenido" id="Construccion">
+        <h3>Construcción de un transformador</h3>
+        <p>La estructura de un transformador se compone de dos bobinas inductivas y un 
+            núcleo de acero laminado. Estas bobinas están aisladas entre sí y del núcleo de 
+            acero. Además, el equipo requiere una carcasa adecuada para albergar el 
+            conjunto del núcleo y los devanados, así como un medio para aislarlos de la 
+            carcasa. </p>
+          <p>Para garantizar el aislamiento, se utilizan pasatapas de porcelana o de tipo 
+            capacitivo que permiten llevar las terminales de los devanados hacia el 
+            exterior. </p>
+          <p>En los transformadores comerciales, el núcleo está hecho de delgadas láminas 
+            de acero con alto contenido de silicio, ensambladas para minimizar las 
+            pérdidas por corrientes parásitas. Estas láminas se recubren con una capa de 
+            barniz o se les forma una capa de óxido para reducir dichas pérdidas. El 
+            espesor de las láminas varía entre 0.35 mm para frecuencias de 50 Hz y 0.5 
+            mm para frecuencias de 25 Hz.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdJ8IEljTXYXyeZq9qtzeS4UJAT3gSOvCP4ijKxer-eBPIjrtUku-0oY-KGRmfFOmSBgs&usqp=CAU" alt="Imagen 9" width="200" height="auto">
+<br>
+        <button onclick="volverAlInicio()">Volver al inicio</button>
+    </div>
+    <div class="contenido" id="Componentes">
+        <h3>Componentes</h3>
+        <p><strong>Podríamos dividir el transformador en tres componentes:</strong></p>
+<ol>
+  <li><strong>Cable y enchufe de corriente alterna.</strong></li>
+  <li><strong>Transformador de corriente eléctrica.</strong></li>
+  <li><strong>Cable y clavija de corriente continua.</strong></li>
+</ol>
+<img src="https://m.media-amazon.com/images/I/61eo2mtn-cL.AC_UF894,1000_QL80.jpg" alt="Producto 1" width="200" height="auto">
+<img src="https://i.ebayimg.com/images/g/dzoAAOSwKTdiuePN/s-l400.jpg" alt="Producto 3" width="200" height="auto">
+<br>      
+<button onclick="volverAlInicio()">Volver al inicio</button>
+    </div>
+    <div class="contenido" id="VentajasyDesventajas">
+        <h3>Ventajas y desventajas de los transformadores para componentes electrónicos.</h3>
+
+        <h5>Ventajas</h5>
+        <p>
+            • Distribuyen energía de manera correcta a los equipos eléctricos. <br>
+            • Reducen el consumo de energía y los costos de electricidad. <br>
+            • Permiten conectar varios equipos electrónicos. <br>
+            • Son más seguros eléctricamente hablando.
+        </p>
+        
+        <h5>Desventajas</h5>
+        <p>
+            • Pueden generar caídas de voltaje, variaciones de frecuencia y deficiencia en la calidad de la energía. <br>
+            • Tienen una regulación de voltaje limitada. <br>
+            • Los transformadores de núcleo dividido tienen un mayor costo y un rango de frecuencia limitado.
+        </p>
+        <img src="https://i.pinimg.com/474x/76/cd/2a/76cd2ae44861b674407e8205bb37f671.jpg" alt="Imagen" width="200" height="auto">
+        <br>
+        <button onclick="volverAlInicio()">Volver al inicio</button>
+    </div>
+    <div class="contenido" id="Conclusion">
+        <h3>Conclusion</h3>
+        <p>Un transformador es un componente esencial en la regulación y conversión de 
+            la energía eléctrica, asegurando el funcionamiento eficiente y seguro de 
+            diversos dispositivos electrónicos y eléctricos, incluidas las computadoras. Su 
+            principal función es modificar el voltaje de la corriente eléctrica para 
+            adaptarlo a las necesidades de cada equipo, protegiéndolo de posibles 
+            fluctuaciones que podrían dañarlo. </p>
+            <p>Estos dispositivos están compuestos por un núcleo, bobinas y sistemas de 
+            aislamiento, además de contar con elementos adicionales como dispositivos de 
+            protección y refrigeración en modelos de mayor potencia. Su versatilidad 
+            permite su aplicación en distintas áreas, desde la transmisión y distribución de 
+            energía eléctrica hasta su uso en equipos médicos, industriales y de consumo 
+            general. </p>
+           <p>Si bien los transformadores presentan múltiples ventajas, como la 
+            optimización del consumo energético y la seguridad eléctrica, también tienen 
+            limitaciones, como caídas de voltaje y costos elevados en ciertos modelos. A pesar 
+            de estos desafíos, siguen siendo fundamentales en la infraestructura 
+            eléctrica moderna, garantizando un suministro estable y eficiente de energía.</p>
+            <img src="https://www.ticarte.com/sites/su/styles/maxxx/public/users/7/teaser/fuente_alimentacion.jpg?itok=e5QvgrFE" alt="Imagen" width="200" height="auto">
+            <br>
+
+            <button onclick="volverAlInicio()">Volver al inicio</button>
+    </div>
+    <div class="contenido" id="Referencias">
+        <h4>Referencias</h4>
+       <p><a  href=https://www.relsamex.com/tipos-de-trasformadores-electricos/ >enlace 1 </a></p> 
+       <p><a  href=https://www.ticarte.com/contenido/el-transformador-del-equipo-microinformatico#:~:text=El%20transformador%20del%20equipo%20microinform%C3%A1tico%20se%20encarga%20proporcionar%20corriente%20el%C3%A9ctrico,que%20funciona%20el%20equipo%20microinform%C3%A1tico >enlace 2</a></p>
+       <p><a  href=https://deingenierias.com/electronica/transformadores/ >enlace 3 </a></p>  
+       <p><a  href=https://energiayredes.com/blog/transformadores-electricos-conceptos-basicos/ >enlace 4 </a></p>
+       <p> <a  href=https://es.wikipedia.org/wiki/Fuente_de_alimentaci%C3%B3n >enlace 5 </a></p>
+       <p> <a  href=https://servernet.com.ar/transformador-de-computadora/ >enlace 6 </a></p>
+        <button onclick="volverAlInicio()">Volver al inicio</button>
+    </div>
+    <section id="Portada" style="display:none;">
+        <h1>Transformadores</h1>
+        <h3>Fatima Carrillo Garcia, María del Mar Diaz Ruiz, Marshall Gutierrez Arce, Yeisson Villalobos Toruño</h3>
+        <h3>BA-INFORM, Universidad Nacional</h3>
+        <h3>Soporte técnico-EIF202</h3>
+        <h3>Ing. Walter Leon Chavarria</h3>
+        <h3>3 de marzo del 2025</h3>
+        <button onclick="volverAlInicio()">Volver al inicio</button>
+    </section>
+    <section id="Video" style="display:none;">
+        <video controls>
+            <source src="Video1.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <button onclick="volverAlInicio()">Volver al inicio</button>
+    </section>
+ 
+    <script>
+        function mostrarSeccion(seccion) {
+          // Ocultar todas las secciones
+          var secciones = document.querySelectorAll('.contenido, section');
+          secciones.forEach(function(seccion) {
+              seccion.style.display = 'none';
+          });
+      
+          // Mostrar la sección solicitada
+          var seccionMostrada = document.getElementById(seccion);
+          if (seccionMostrada) {
+              seccionMostrada.style.display = 'block';
+          }
+      }
+      
+      
+          function volverAlInicio() {
+              mostrarSeccion('EnBlanco');
+          }
+      </script>
+</body>
+</html>
